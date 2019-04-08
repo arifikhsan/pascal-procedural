@@ -112,22 +112,14 @@ Gotoxy(2, 20); Readln(pendataanDeposito);
 
 { selesai konfirmasi pendataan depositso lagi }
 
-if pendataanDeposito = 'Y' then
+if (pendataanDeposito = 'Y') or (pendataanDeposito = 'y') then
   begin
     pendataanDepositoLagi := true;
-  end
-else if pendataanDeposito = 'y' then
-  begin
-    pendataanDepositoLagi := true;
-  end
-else
-  begin
-    pendataanDepositoLagi := false;
   end
 
 until pendataanDepositoLagi = false;
 
 Clrscr;
-Readln;
 
 End.
+
