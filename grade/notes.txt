@@ -1,0 +1,19 @@
+menghitung rata rata dengan rumus
+
+30% UAS + 30% UTS + 15% Quiz + 20% Tugas + 5% kehadiran
+
+
+grade
+
+nilai akhir = 85 grade a
+75 <= nilai akhir < 85 grade b
+65 <= nilai akhir < 75 grade c
+55 <= nilai akhir < 65 grade d
+nilai akhir < 65 grade E
+
+kelulusan
+
+grade < c gagal
+grade >= c lulus
+
+ulangi

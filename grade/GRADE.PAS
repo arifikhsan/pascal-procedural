@@ -1,0 +1,42 @@
+Uses crt;
+
+Var nomorMahasiswa, nilaiUas, nilaiUts, nilaiQuis, nilaiTugas, nilaiKehadiran: integer;
+    namaMahasiswa, status, adaDataLagi: string;
+    rataRata: real;
+    apakahAdaDataLagi: boolean;
+
+Begin
+
+Clrscr;
+
+Gotoxy(2, 2); Write('Politeknik Cemerlang');
+Gotoxy(2, 3); Write('Jl. Halmahera No. 23-27, Baturusa');
+Gotoxy(2, 4); Write('-------------------------------------------');
+
+Gotoxy(2, 5); Write('NPM              : ');
+Gotoxy(2, 6); Write('Nama Mahasiswa   : ');
+Gotoxy(2, 7); Write('Nilai UAS        :            Rata-rata  : ');
+Gotoxy(2, 8); Write('Nilai UTS        :            Grade      : ');
+Gotoxy(2, 9); Write('Nilai Quis       :            Status     : ');
+Gotoxy(2, 10); Write('Nilai Tugas      : ');
+Gotoxy(2, 11); Write('Nilai Kehadiran  : ');
+Gotoxy(2, 12); Writeln('------------------------------------------');
+
+{ mulai input }
+
+Gotoxy(21, 5); Readln(nomorMahasiswa);
+Gotoxy(21, 6); Readln(namaMahasiswa);
+Gotoxy(21, 7); Readln(nilaiUas);
+Gotoxy(21, 8); Readln(nilaiUts);
+Gotoxy(21, 9); Readln(nilaiQuis);
+Gotoxy(21, 10); Readln(nilaiTugas);
+Gotoxy(21, 11); Readln(nilaiKehadiran);
+
+Gotoxy(2, 13); Write('');
+
+{ selesai input }
+{
+Gotoxy(2, 13); Writeln('Apakah ada data lagi? [Y/T]: ');
+Gotoxy(2, 14); Readln(adaDataLagi); }
+
+End.
