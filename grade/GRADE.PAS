@@ -24,15 +24,13 @@ Gotoxy(2, 12); Writeln('------------------------------------------');
 
 { mulai input }
 
-Gotoxy(21, 5); Readln(nomorMahasiswa);
-Gotoxy(21, 6); Readln(namaMahasiswa);
-Gotoxy(21, 7); Readln(nilaiUas);
-Gotoxy(21, 8); Readln(nilaiUts);
-Gotoxy(21, 9); Readln(nilaiQuis);
-Gotoxy(21, 10); Readln(nilaiTugas);
-Gotoxy(21, 11); Readln(nilaiKehadiran);
-
-Gotoxy(2, 13); Write('');
+Gotoxy(21, 5); Read(nomorMahasiswa);
+Gotoxy(21, 6); Read(namaMahasiswa);
+Gotoxy(21, 7); Read(nilaiUas);
+Gotoxy(21, 8); Read(nilaiUts);
+Gotoxy(21, 9); Read(nilaiQuis);
+Gotoxy(21, 10); Read(nilaiTugas);
+Gotoxy(21, 11); Read(nilaiKehadiran);
 
 { selesai input }
 {
