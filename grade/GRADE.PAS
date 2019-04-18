@@ -8,10 +8,10 @@ Var
 
 Begin
 
-tidakAdaDataLagi := true;
 
 repeat
 
+tidakAdaDataLagi := true;
 Clrscr;
 
 Gotoxy(2, 2); Write('Politeknik Cemerlang');
