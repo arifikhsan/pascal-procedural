@@ -1,11 +1,16 @@
 Uses crt;
 
-Var nomorMahasiswa, nilaiUas, nilaiUts, nilaiQuis, nilaiTugas, nilaiKehadiran: integer;
-    namaMahasiswa, status, adaDataLagi: string;
-    rataRata: real;
-    apakahAdaDataLagi: boolean;
+Var 
+  nomorMahasiswa, nilaiUas, nilaiUts, nilaiQuis, nilaiTugas, nilaiKehadiran: integer;
+  namaMahasiswa, status, adaDataLagi, grade: string;
+  rataRata: real;
+  tidakAdaDataLagi: boolean;
 
 Begin
+
+tidakAdaDataLagi := true;
+
+repeat
 
 Clrscr;
 
@@ -24,17 +29,58 @@ Gotoxy(2, 12); Writeln('------------------------------------------');
 
 { mulai input }
 
-Gotoxy(21, 5); Read(nomorMahasiswa);
-Gotoxy(21, 6); Read(namaMahasiswa);
-Gotoxy(21, 7); Read(nilaiUas);
-Gotoxy(21, 8); Read(nilaiUts);
-Gotoxy(21, 9); Read(nilaiQuis);
-Gotoxy(21, 10); Read(nilaiTugas);
-Gotoxy(21, 11); Read(nilaiKehadiran);
+Gotoxy(21, 5); Readln(nomorMahasiswa);
+Gotoxy(21, 6); Readln(namaMahasiswa);
+Gotoxy(21, 7); Readln(nilaiUas);
+Gotoxy(21, 8); Readln(nilaiUts);
+Gotoxy(21, 9); Readln(nilaiQuis);
+Gotoxy(21, 10); Readln(nilaiTugas);
+Gotoxy(21, 11); Readln(nilaiKehadiran);
 
 { selesai input }
-{
-Gotoxy(2, 13); Writeln('Apakah ada data lagi? [Y/T]: ');
-Gotoxy(2, 14); Readln(adaDataLagi); }
+
+{ mulai proses }
+
+rataRata := 30 / 100 * nilaiUas + 30 / 100 * nilaiUts + 15 / 100 * nilaiQuis + 20 / 100 * nilaiTugas + 5 / 100 * nilaiKehadiran;
+
+if (rataRata >= 85) then
+  grade := 'A'
+else if (rataRata < 85) and (rataRata >= 75) then
+  grade := 'B'
+else if (rataRata < 75) and (rataRata >= 65) then
+  grade := 'C'
+else if (rataRata < 65) and (rataRata >= 55) then
+  grade := 'D'
+else if (rataRata < 55) then
+  grade := 'E';
+
+if (grade = 'A') or (grade = 'B') or (grade = 'C') then
+  status := 'LULUS'
+else if (grade = 'D') or (grade = 'E') then
+  status := 'BELUM LULUS';
+
+{ mulai menampilkan hasil }
+
+Gotoxy(45, 7); Writeln(rataRata:2:1);
+Gotoxy(45, 8); Writeln(grade);
+Gotoxy(45, 9); Writeln(status);
+
+
+{ selesai menampilkan hasil }
+
+{ akhir proses }
+
+{ mulai pengulangan }
+
+Gotoxy(2, 13); Writeln('');
+Gotoxy(2, 14); Writeln('Apakah Anda ingin memasukkan nilai lagi? [Y/T]: ');
+Gotoxy(2, 15); Readln(adaDataLagi);
+
+if (adaDataLagi = 'Y') or (adaDataLagi = 'y') then
+  tidakAdaDataLagi := false
+
+until (tidakAdaDataLagi);
+
+{ akhir pengulangan }
 
 End.
