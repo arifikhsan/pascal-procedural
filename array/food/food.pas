@@ -9,18 +9,18 @@ Begin
   i := 0;
 
   repeat
-
     Clrscr;
+    
     Inc(i);
     Write('Nama buah: ');
     Readln(buahBuahan[i]);
-    Write('Apakah ada buah lagi? [y/t]');
+    Write('Apakah ada buah lagi? [y/t]: ');
     Readln(adaBuahLagi);
 
   until (adaBuahLagi = 't') or (adaBuahLagi = 'T');
 
   Clrscr;
-  for posisi := i downto 1 do
+  for posisi := 1 to i do
     Writeln(buahBuahan[posisi]);
 
   Readln;
