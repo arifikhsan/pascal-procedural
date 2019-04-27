@@ -11,6 +11,7 @@ Begin
   repeat
 
     Clrscr;
+
     Inc(i);
     Write('Nama alat musik: ');
     Readln(namaMusik[i]);
@@ -20,6 +21,7 @@ Begin
   until (jawab = 't') or (jawab = 'T');
 
   Clrscr;
+
   for posisi := i downto 1 do
     Writeln(namaMusik[posisi]);
 

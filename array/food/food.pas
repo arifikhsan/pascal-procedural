@@ -20,6 +20,9 @@ Begin
   until (adaBuahLagi = 't') or (adaBuahLagi = 'T');
 
   Clrscr;
+
+  Writeln('Nama buah yang telah Anda masukkan: ');
+
   for posisi := 1 to i do
     Writeln(buahBuahan[posisi]);
 
