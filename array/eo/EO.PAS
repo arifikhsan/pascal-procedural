@@ -170,15 +170,17 @@ begin
       gotoxy(26, 15); 
       write('apakah ada data lagi? [y/t]?');
       readln(ulangEvent);
+      ulangIdPegawai := '';
+      ulangKodePaket := '';
+      ulangBiayaPaket := '';
       clrscr;
-
       end;
 
       { mulai proses rekap }
 
       clrscr;
 
-      gotoxy(2, 2); write('EO Kirana Larasati');
+      gotoxy(2, 2); write('EO Kirana Larasati '); write(i);
       gotoxy(2, 3); write('Jl. Gayam Sari No 23 Semarang');
       gotoxy(2, 4); write('Telp. 024-111 579, Fax. 024-123 321');
                           {1}      {10}      {20}      {30}      {40}
@@ -191,19 +193,7 @@ begin
         gotoxy(2, 6 + posisiRekap); write(nomorFakur[posisiRekap] + ' | ' + namaKonsumen[posisiRekap]);
       end;
 
-      {
-
-      gotoxy(2, 6); write('No Faktur             : ');
-      gotoxy(2, 7); write('Nama Konsumen         : ');
-      gotoxy(2, 8); write('Alamat                : ');
-      gotoxy(2, 9); write('Tanggal Acara         : ');
-      gotoxy(2, 10); write('Kode Paket            : ');
-      gotoxy(2, 11); write('Biaya Paket Kegiatan  : ');
-      gotoxy(2, 12); write('Jumlah DP             : ');
-      gotoxy(2, 13); write('Kekurangan            : ');
-
-      }
-      gotoxy(2, 14 + i); write('=================================================');
+      gotoxy(2, 8 + i); write('=================================================');
 
       { selsai proses rekap }
       readln;
