@@ -100,57 +100,58 @@ begin
 
 
     while (ulangKodePaket <> 't') do
-      begin
+    begin
 
-        gotoxy(26, 10); 
-        readln(kodePaket[i]);
-        gotoxy(30, 10);
+      gotoxy(26, 10); 
+      readln(kodePaket[i]);
+      gotoxy(30, 10);
 
-        if (kodePaket[i] = 'PP1') then
-          begin
-            write('Paket Pernikahan I');
-            totalHarga[i] := hargaPaketPernikahanI;
-            ulangKodePaket := 't'
-          end
-        else if (kodePaket[i] = 'PP2') then
-          begin
-            write('Paket Pernikahan II');
-            totalHarga[i] := hargaPaketPernikahanII;
-            ulangKodePaket := 't'
-          end
-        else if (kodePaket[i] = 'PP3') then
-          begin
-            write('Paket Pernikahan III');
-            totalHarga[i] := hargaPaketPernikahanIII;
-            ulangKodePaket := 't'
-          end
-        else if (kodePaket[i] = 'PU1') then
-          begin
-            write('Paket Ulang Tahun I');
-            totalHarga[i] := hargaPaketUlangTahunI;
-            ulangKodePaket := 't'
-          end
-        else if (kodePaket[i] = 'PU2') then
-          begin
-            write('Paket Ulang Tahun II');
-            totalHarga[i] := hargaPaketUlangTahunII;
-            ulangKodePaket := 't'
-          end
-        else if (kodePaket[i] = 'PU3') then
-          begin
-            write('Paket Ulang Tahun III');
-            totalHarga[i] := hargaPaketUlangTahunIII;
-            ulangKodePaket := 't'
-          end
-        else 
-          begin
-            gotoxy(20, 16);
-            write('Kode Paket tidak ditemukan. [y/t]?: ');
-            readln(ulangKodePaket);
-            gotoxy(20, 16);
-            write('                                         ');
-            gotoxy(26, 10); write('          ')
-          end
+      if (kodePaket[i] = 'PP1') then
+        begin
+          write('Paket Pernikahan I');
+          totalHarga[i] := hargaPaketPernikahanI;
+          ulangKodePaket := 't'
+        end
+      else if (kodePaket[i] = 'PP2') then
+        begin
+          write('Paket Pernikahan II');
+          totalHarga[i] := hargaPaketPernikahanII;
+          ulangKodePaket := 't'
+        end
+      else if (kodePaket[i] = 'PP3') then
+        begin
+          write('Paket Pernikahan III');
+          totalHarga[i] := hargaPaketPernikahanIII;
+          ulangKodePaket := 't'
+        end
+      else if (kodePaket[i] = 'PU1') then
+        begin
+          write('Paket Ulang Tahun I');
+          totalHarga[i] := hargaPaketUlangTahunI;
+          ulangKodePaket := 't'
+        end
+      else if (kodePaket[i] = 'PU2') then
+        begin
+          write('Paket Ulang Tahun II');
+          totalHarga[i] := hargaPaketUlangTahunII;
+          ulangKodePaket := 't'
+        end
+      else if (kodePaket[i] = 'PU3') then
+        begin
+          write('Paket Ulang Tahun III');
+          totalHarga[i] := hargaPaketUlangTahunIII;
+          ulangKodePaket := 't'
+        end
+      else 
+        begin
+          gotoxy(20, 16);
+          write('Kode Paket tidak ditemukan. [y/t]?: ');
+          readln(ulangKodePaket);
+          gotoxy(20, 16);
+          write('                                         ');
+          gotoxy(26, 10); write('          ')
+        end
+
       end;
 
       { selesai proses kode paket }
@@ -169,13 +170,37 @@ begin
       gotoxy(26, 15); 
       write('apakah ada data lagi? [y/t]?');
       readln(ulangEvent);
-
+      clrscr;
 
       end;
 
       { mulai proses rekap }
 
       clrscr;
+
+      gotoxy(2, 2); write('EO Kirana Larasati');
+      gotoxy(2, 3); write('Jl. Gayam Sari No 23 Semarang');
+      gotoxy(2, 4); write('Telp. 024-111 579, Fax. 024-123 321');
+                          {1}      {10}      {20}      {30}      {40}
+      gotoxy(2, 5); write('================== Rekap ========================');
+
+      gotoxy(2, 6); write(i);
+
+      
+
+      {
+
+      gotoxy(2, 6); write('No Faktur             : ');
+      gotoxy(2, 7); write('Nama Konsumen         : ');
+      gotoxy(2, 8); write('Alamat                : ');
+      gotoxy(2, 9); write('Tanggal Acara         : ');
+      gotoxy(2, 10); write('Kode Paket            : ');
+      gotoxy(2, 11); write('Biaya Paket Kegiatan  : ');
+      gotoxy(2, 12); write('Jumlah DP             : ');
+      gotoxy(2, 13); write('Kekurangan            : ');
+
+      }
+      gotoxy(2, 14); write('==================================================');
 
       { selsai proses rekap }
       readln;
