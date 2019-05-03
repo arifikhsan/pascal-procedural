@@ -1,0 +1,32 @@
+kode paket
+PP1
+PP2
+PP3
+PU1
+PU2
+PU3
+
+nama paket kegiatan
+Paket Pernihakan I
+Paket Pernihakan II
+Paket Pernihakan II
+Paket Ulang Tahun I
+Paket Ulang Tahun II
+Paket Ulang Tahun II
+
+biaya paket kegiatan
+13500000
+25000000
+45000000
+1500000
+3000000
+5000000
+
+jika kode paket tidak ditemukan, maka program akan memberi peringatan: kode paket tidak ditemukan
+
+kode karyawan
+K001 Riana
+K002 Wulan
+K003 Deasy
+
+Jika id karyawan yand diinputkan tidak ada, maka program akan memberikan peringatan karyawan tidak ditemukan dan pengguna diminta untuk menginput lagi.
