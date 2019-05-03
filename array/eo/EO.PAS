@@ -2,7 +2,7 @@ uses crt;
      var nomorFakur, idPegawai, namaKonsumen, alamat, tanggal, kodePaket: array[1..100] of string[20];
          totalHarga, dp, hargaKekurangan: array[1..100] of longint;
          ulangEvent, ulangIdPegawai, ulangKodePaket, ulangBiayaPaket: string;
-         i: integer;
+         i, posisiRekap: integer;
          hargaPaketPernikahanI, hargaPaketPernikahanII, hargaPaketPernikahanIII: longint;
          hargaPaketUlangTahunI, hargaPaketUlangTahunII, hargaPaketUlangTahunIII: longint;
 
@@ -184,9 +184,12 @@ begin
                           {1}      {10}      {20}      {30}      {40}
       gotoxy(2, 5); write('================== Rekap ========================');
 
-      gotoxy(2, 6); write(i);
+      gotoxy(2, 6); write('No Faktur | Nama Konsumen'); 
 
-      
+      for posisiRekap := 1 to i do
+      begin
+        gotoxy(2, 6 + posisiRekap); write(nomorFakur[posisiRekap] + ' | ' + namaKonsumen[posisiRekap]);
+      end;
 
       {
 
@@ -200,7 +203,7 @@ begin
       gotoxy(2, 13); write('Kekurangan            : ');
 
       }
-      gotoxy(2, 14); write('==================================================');
+      gotoxy(2, 14 + i); write('=================================================');
 
       { selsai proses rekap }
       readln;
