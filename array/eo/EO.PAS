@@ -9,12 +9,14 @@ uses crt;
 begin
 
     clrscr;
+
     { mulai set nilai variabel }
 
     i := 0;
     ulangIdPegawai := '';
     ulangKodePaket := '';
     ulangBiayaPaket := '';
+
     hargaPaketPernikahanI := 15300000;
     hargaPaketPernikahanII := 25000000;
     hargaPaketPernikahanIII := 45000000;
@@ -44,13 +46,6 @@ begin
       gotoxy(30, 6); write('Id Pegawai: ');
 
       gotoxy(2, 14); write('==========================================');
-
-      { popup }
-
-      // 
-
-      { popup }
-
 
       gotoxy(26, 6); readln(nomorFakur[i]);
 
@@ -96,7 +91,6 @@ begin
       gotoxy(26, 9); readln(tanggal[i]);
 
       { mulai proses kode paket }
-
 
       while (ulangKodePaket <> 't') do
       begin
