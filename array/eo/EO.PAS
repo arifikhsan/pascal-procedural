@@ -1,5 +1,5 @@
 uses crt;
-     var nomorFakur, idPegawai, namaKonsumen, alamat, tanggal, kodePaket: array[1..100] of string[20];
+     var nomorFakur, idPegawai, namaPegawai, namaKonsumen, namaEvent, alamat, tanggal, kodePaket: array[1..100] of string[20];
          totalHarga, dp, hargaKekurangan: array[1..100] of longint;
          ulangEvent, ulangIdPegawai, ulangKodePaket, ulangBiayaPaket: string;
          i, posisiRekap: integer;
@@ -60,17 +60,20 @@ begin
 
           if (idPegawai[i] = 'FK001') then
             begin
-              write('Riana');
+              namaPegawai[i] := 'Riana'; 
+              write(namaPegawai[i]);
               ulangIdPegawai := 't'
             end
           else if (idPegawai[i] = 'FK002') then
             begin
-              write('Wulan');
+              namaPegawai[i] := 'Wulan'; 
+              write(namaPegawai[i]);
               ulangIdPegawai := 't'
             end
           else if (idPegawai[i] = 'FK003') then
             begin
-              write('Deasy');
+              namaPegawai[i] := 'Deasy'; 
+              write(namaPegawai[i]);
               ulangIdPegawai := 't'
             end
           else 
@@ -101,37 +104,43 @@ begin
 
         if (kodePaket[i] = 'PP1') then
           begin
-            write('Paket Pernikahan I');
+            namaEvent[i] := 'Paket Pernikahan I'; 
+            write(namaEvent[i]);
             totalHarga[i] := hargaPaketPernikahanI;
             ulangKodePaket := 't'
           end
         else if (kodePaket[i] = 'PP2') then
           begin
-            write('Paket Pernikahan II');
+            namaEvent[i] := 'Paket Pernikahan II'; 
+            write(namaEvent[i]);
             totalHarga[i] := hargaPaketPernikahanII;
             ulangKodePaket := 't'
           end
         else if (kodePaket[i] = 'PP3') then
           begin
-            write('Paket Pernikahan III');
+            namaEvent[i] := 'Paket Pernikahan III'; 
+            write(namaEvent[i]);
             totalHarga[i] := hargaPaketPernikahanIII;
             ulangKodePaket := 't'
           end
         else if (kodePaket[i] = 'PU1') then
           begin
-            write('Paket Ulang Tahun I');
+            namaEvent[i] := 'Paket Ulang Tahun I'; 
+            write(namaEvent[i]);
             totalHarga[i] := hargaPaketUlangTahunI;
             ulangKodePaket := 't'
           end
         else if (kodePaket[i] = 'PU2') then
           begin
-            write('Paket Ulang Tahun II');
+            namaEvent[i] := 'Paket Ulang Tahun II'; 
+            write(namaEvent[i]);
             totalHarga[i] := hargaPaketUlangTahunII;
             ulangKodePaket := 't'
           end
         else if (kodePaket[i] = 'PU3') then
           begin
-            write('Paket Ulang Tahun III');
+            namaEvent[i] := 'Paket Ulang Tahun III'; 
+            write(namaEvent[i]);
             totalHarga[i] := hargaPaketUlangTahunIII;
             ulangKodePaket := 't'
           end
@@ -178,19 +187,27 @@ begin
       gotoxy(2, 3); write('Jl. Gayam Sari No 23 Semarang');
       gotoxy(2, 4); write('Telp. 024-111 579, Fax. 024-123 321');
                           {1}      {10}      {20}      {30}      {40}
-      gotoxy(2, 5); write('================== Rekap ========================');
+      gotoxy(2, 5); write('=============================== Rekap =====================================');
 
       gotoxy(2, 6); write('No Faktur'); 
       gotoxy(13, 6); write('| Nama Konsumen'); 
+      gotoxy(29, 6); write('| Nama Pegawai'); 
+      gotoxy(44, 6); write('| Nama Paket Event'); 
+      gotoxy(63, 6); write('| Jumlah Kekurangan'); 
 
       for posisiRekap := 0 to i - 1 do
       begin
         gotoxy(2, 7 + posisiRekap); write(nomorFakur[posisiRekap]);
         gotoxy(13, 7 + posisiRekap); write('| ' + namaKonsumen[posisiRekap]);
+        gotoxy(29, 7 + posisiRekap); write('| ' + namaPegawai[posisiRekap]);
+        gotoxy(44, 7 + posisiRekap); write('| ' + namaEvent[posisiRekap]);
+        gotoxy(63, 7 + posisiRekap);
+        write('| Rp. ');
+        write(hargaKekurangan[posisiRekap]);
       end;
 
-      gotoxy(2, 8 + i); write('=================================================');
-      gotoxy(2, 9 + i); write('Jumlah Pesanan: '); write(i);
+      gotoxy(2, 7 + i); write('===========================================================================');
+      gotoxy(2, 8 + i); write('Jumlah Pesanan: '); write(i);
 
       { selsai proses rekap }
 
