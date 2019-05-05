@@ -1,0 +1,13 @@
+Jumlah biaya yang harus di bayar oleh konsumen ditentukan berdasarkan tujuan wisata dan jumlah orang yang akan ikut dalam wisata tersebut. Jika jumlah rombongan >= 8 orang, maka akan mendapatkan potongan sebesar 10%, sedangkan juka jumlah rombongan >= 3 tapi kurang dari 8 orang akan mendapatkan potongan 5% dari total pembayaran. Tugas Anda: Buatlan program sederhana dengan array yang dapat digunakan untuk memasukan datra konsumen, id wisata serta menentukan tujuan wisata, pilihan paket dan menghitung jumlah baar yang harus di bayar oleh konsumen. Program harus dapat digunakan untuk memasukkan data berulang ulang. Perulangan akan dilakukan selama use menjawab y dari pertanyaan Mau menghitung jumlah bayar konsumen lagi[y/t]?" 
+jika pengguna sudah selesai memasukaan data, maka akan keluar rekap
+
+Andra Tour & Travel
+Jl. Sriwijaya No. 80, Semarang
+Telp. 024-9988 7766; Fax: 024-4567 0987
+-------------------------------------------------------
+          Pendataan Peserta Tour Wisata
+-------------------------------------------------------
+Data Konsumen
+Nama Konsumen : ..............       Tanggal : ........
+Alamat Konsumen : ............
+-------------------------------------------------------
