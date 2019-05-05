@@ -24,10 +24,10 @@ begin
     hargaPaketUlangTahunII := 3000000;
     hargaPaketUlangTahunIII := 5000000;
 
+    { selesai set nilai variabel}
+
     while (ulangEvent <> 't') do
-      begin
-          
-      { selesai set nilai variabel}
+      begin      
 
       gotoxy(2, 2); write('EO Kirana Larasati');
       gotoxy(2, 3); write('Jl. Gayam Sari No 23 Semarang');
@@ -153,7 +153,6 @@ begin
             write('                                         ');
             gotoxy(26, 10); write('          ')
           end
-
         end;
 
         { selesai proses kode paket }
