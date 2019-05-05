@@ -58,19 +58,19 @@ begin
           readln(idPegawai[i]);
           gotoxy(48, 6);
 
-          if (idPegawai[i] = 'FK001') then
+          if (idPegawai[i] = 'K001') then
             begin
               namaPegawai[i] := 'Riana'; 
               write(namaPegawai[i]);
               ulangIdPegawai := 't'
             end
-          else if (idPegawai[i] = 'FK002') then
+          else if (idPegawai[i] = 'K002') then
             begin
               namaPegawai[i] := 'Wulan'; 
               write(namaPegawai[i]);
               ulangIdPegawai := 't'
             end
-          else if (idPegawai[i] = 'FK003') then
+          else if (idPegawai[i] = 'K003') then
             begin
               namaPegawai[i] := 'Deasy'; 
               write(namaPegawai[i]);
