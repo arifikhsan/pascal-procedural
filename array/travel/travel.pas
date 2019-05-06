@@ -55,8 +55,10 @@ begin
   { mulai pendataan travel }
     while ulangPendataanTravel <> 't' do
     begin
+      { mulai inisialisasi variabel }
         ulangIdTujuan := '';
         ulangPaketTravel := '';
+      { selesai inisialisasi variabel }
       { mulai menampilkan form }
         { mulai bagian kiri }
           gotoxy(2, 1); write('Andra Tour & Travel');
