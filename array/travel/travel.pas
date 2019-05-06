@@ -6,6 +6,7 @@ var ulangPendataanTravel, ulangIdTujuan, ulangPaketTravel: string;
     hargaDiskon, hargaSetelahDiskon: array[1..50] of real;
     namaKonsumen, alamatKonsumen, kontakKonsumen, idTujuan, tanggal, kotaTujuan, fasilitas: array[1..50] of string;
     paket, jumlahPeserta, diskon: array[1..50] of integer;
+    seluruhHargaSetelahDiskon: real;
 
     idWisata1, idWisata2, idWisata3, idWisata4, idWisata5: string;
     paket1, paket2: integer;
@@ -21,6 +22,7 @@ begin
   { mulai inisialisasi variabel }
     iterasiTravel := 0;
     iterasiRekapTravel := 0;
+    seluruhHargaSetelahDiskon := 0;
 
     ulangPendataanTravel := '';
 
@@ -93,8 +95,8 @@ begin
       { selesai menampilkan form }
 
       { mulai input form }
-        gotoxy(57, 8); readln(tanggal[iterasiTravel]);
         gotoxy(22, 8); readln(namaKonsumen[iterasiTravel]);
+        gotoxy(57, 8); readln(tanggal[iterasiTravel]);
         gotoxy(22, 9); readln(alamatKonsumen[iterasiTravel]);
         gotoxy(22, 10); readln(kontakKonsumen[iterasiTravel]);
         { mulai input id tujuan }
@@ -130,8 +132,10 @@ begin
               begin
                 gotoxy(10, 20); write('Id tujuan tidak ditemukan. Ulangi lagi? [y/t]');
                 readln(ulangIdTujuan);
-                gotoxy(22, 12); write('         ');
-                gotoxy(10, 20); write('                                              ')
+                { jika input salah }
+                  gotoxy(22, 12); write('         ');
+                  gotoxy(10, 20); write('                                              ')
+                { jika input salah }
               end;
             gotoxy(57, 12); write(kotaTujuan[iterasiTravel]);
           end;
@@ -154,8 +158,10 @@ begin
               begin
                 gotoxy(10, 20); write('Paket tidak ditemukan. Ulangi lagi? [y/t]');
                 readln(ulangPaketTravel);
-                gotoxy(22, 13); write('     ');
-                gotoxy(10, 20); write('                                              ')
+                { jika input salah }
+                  gotoxy(22, 13); write('     ');
+                  gotoxy(10, 20); write('                                              ')
+                { jika input salah }
               end;
 
             gotoxy(57, 13); write(fasilitas[iterasiTravel]);
@@ -221,6 +227,29 @@ begin
   { selesai pendataan travel }
 
   { mulai rekap travel }
+    gotoxy(2, 1); write('Andra Tour & Travel');
+    gotoxy(2, 2); write('Jl. Sriwijaya No. 80, Semarang');
+    gotoxy(2, 3); write('Telp. 024-9988 7766; Fax: 024-4567 0987');
+                                {10}       {20}       {30}       {40}      {50}       {60}
+    gotoxy(2, 4); write('-------------------------------------------------------------------');
+    gotoxy(2, 5); write('No  Nama Konsumen  Tujuan Wisata      Paket    Rombongan    Biaya  ');
+    gotoxy(2, 6); write('-------------------------------------------------------------------');
+    for iterasiRekapTravel := 0 to iterasiTravel - 1 do
+    begin
+      gotoxy(2, 7 + iterasiRekapTravel); write(iterasiRekapTravel + 1);
+      gotoxy(6, 7 + iterasiRekapTravel); write(namaKonsumen[iterasiRekapTravel]);
+      gotoxy(21, 7 + iterasiRekapTravel); write(kotaTujuan[iterasiRekapTravel]);
+      gotoxy(40, 7 + iterasiRekapTravel); write(paket[iterasiRekapTravel]);
+      gotoxy(49, 7 + iterasiRekapTravel); write(jumlahPeserta[iterasiRekapTravel]);
+      gotoxy(62, 7 + iterasiRekapTravel); write(hargaSetelahDiskon[iterasiRekapTravel]:2:1);
+
+      seluruhHargaSetelahDiskon := seluruhHargaSetelahDiskon + hargaSetelahDiskon[iterasiRekapTravel];
+    end;
+    gotoxy(2, 7 + iterasiTravel); write('-------------------------------------------------------------------');
+    gotoxy(52, 8 + iterasiTravel); 
+    write('Total Rp. ', seluruhHargaSetelahDiskon:2:1);
+    
+    readln;
   { selesai rekap travel }
 
   { mulai bagian akhir }
