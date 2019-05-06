@@ -2,8 +2,19 @@ uses crt;
 
 var ulangPendataanTravel, ulangIdTujuan, ulangPaketTravel: string;
     iterasiTravel, iterasiRekapTravel: integer;
-    namaKonsumen, alamatKonsumen, kontakKonsumen, idTujuan, tanggal: array[1..50] of string;
+    hargaPerOrang: longint;
+    namaKonsumen, alamatKonsumen, kontakKonsumen, idTujuan, tanggal, kotaTujuan, fasilitas: array[1..50] of string;
     paket, jumlahPeserta: array[1..50] of integer;
+
+    idWisata1, idWisata2, idWisata3, idWisata4, idWisata5: string;
+    paket1, paket2: integer;
+
+    fasilitasPaketI, fasilitasPaketII: string;
+    hargaTujuan1Paket1, hargaTujuan1Paket2: longint;
+    hargaTujuan2Paket1, hargaTujuan2Paket2: longint;
+    hargaTujuan3Paket1, hargaTujuan3Paket2: longint;
+    hargaTujuan4Paket1, hargaTujuan4Paket2: longint;
+    hargaTujuan5Paket1, hargaTujuan5Paket2: longint;
 
 begin
   { mulai inisialisasi variabel }
@@ -14,7 +25,28 @@ begin
     ulangIdTujuan := '';
     ulangPaketTravel := '';
 
-    namaKonsumen[iterasiTravel] := 'aaa';
+    paket1 := 1;
+    paket2 := 2;
+
+    idWisata1 := 'TJN01';
+    idWisata2 := 'TJN02';
+    idWisata3 := 'TJN03';
+    idWisata4 := 'TJN04';
+    idWisata5 := 'TJN05';
+
+    fasilitasPaketI := 'Bus AC, Hotel Bintang 3';
+    fasilitasPaketII := 'Bus AC VIP, Hotel Bintang 5';
+
+    hargaTujuan1Paket1 := 1600000;
+    hargaTujuan1Paket2 := 2200000;
+    hargaTujuan2Paket1 :=  600000;
+    hargaTujuan2Paket2 := 1600000;
+    hargaTujuan3Paket1 :=  900000;
+    hargaTujuan3Paket2 := 2000000;
+    hargaTujuan4Paket1 :=  900000;
+    hargaTujuan4Paket2 := 2000000;
+    hargaTujuan5Paket1 := 1800000;
+    hargaTujuan5Paket2 := 3600000;
   { selesai inisialisasi variabel }
 
   clrscr;
@@ -64,10 +96,96 @@ begin
         gotoxy(22, 8); readln(namaKonsumen[iterasiTravel]);
         gotoxy(22, 9); readln(alamatKonsumen[iterasiTravel]);
         gotoxy(22, 10); readln(kontakKonsumen[iterasiTravel]);
-        gotoxy(22, 12); readln(idTujuan[iterasiTravel]);
-        gotoxy(22, 13); readln(paket[iterasiTravel]);
-        gotoxy(22, 15); readln(jumlahPeserta[iterasiTravel]);
+        { mulai input id tujuan }
+          while ulangIdTujuan <> 't' do
+          begin
+            gotoxy(22, 12); readln(idTujuan[iterasiTravel]);
+            if idTujuan[iterasiTravel] = idWisata1 then
+              begin
+                kotaTujuan[iterasiTravel] := 'Jakarta';
+                ulangIdTujuan := 't';
+              end
+            else if idTujuan[iterasiTravel] = idWisata2 then
+              begin
+                kotaTujuan[iterasiTravel] := 'Yogyakarta';
+                ulangIdTujuan := 't';
+              end
+            else if idTujuan[iterasiTravel] = idWisata3 then
+              begin
+                kotaTujuan[iterasiTravel] := 'Bandung';
+                ulangIdTujuan := 't';
+              end
+            else if idTujuan[iterasiTravel] = idWisata4 then
+              begin
+                kotaTujuan[iterasiTravel] := 'Surabaya';
+                ulangIdTujuan := 't';
+              end
+            else if idTujuan[iterasiTravel] = idWisata5 then
+              begin
+                kotaTujuan[iterasiTravel] := 'Bali';
+                ulangIdTujuan := 't';
+              end
+            else
+              begin
+                gotoxy(10, 20); write('Id tujuan tidak ditemukan. Ulangi lagi? [y/t]');
+                readln(ulangIdTujuan);
+                gotoxy(22, 12); write('         ');
+                gotoxy(10, 20); write('                                              ')
+              end;
+            gotoxy(57, 12); write(kotaTujuan[iterasiTravel]);
+          end;
+        { selesai input id tujuan }
+        { mulai input paket travel }
+          gotoxy(22, 13); readln(paket[iterasiTravel]);
+          while ulangPaketTravel <> 't' do
+          begin
+            if paket[iterasiTravel] = paket1 then
+              begin
+                fasilitas[iterasiTravel] := fasilitasPaketI;
+                ulangPaketTravel := 't';
+              end
+            else if paket[iterasiTravel] = paket2 then 
+              begin
+                fasilitas[iterasiTravel] := fasilitasPaketII;
+                ulangPaketTravel := 't';
+              end
+            else 
+              begin
+                gotoxy(10, 20); write('Paket tidak ditemukan. Ulangi lagi? [y/t]');
+                readln(ulangPaketTravel);
+                gotoxy(22, 13); write('     ');
+                gotoxy(10, 20); write('                                              ')
+              end;
 
+            gotoxy(57, 13); write(fasilitas[iterasiTravel]);
+          end;
+        { selesai input paket travel }
+        { mulai menentukan harga paket per orang }
+          if (idTujuan[iterasiTravel] = idWisata1) and (paket[iterasiTravel] = paket1) then
+            hargaPerOrang := hargaTujuan1Paket1
+          else if (idTujuan[iterasiTravel] = idWisata1) and (paket[iterasiTravel] = paket2) then
+            hargaPerOrang := hargaTujuan1Paket2
+          else if (idTujuan[iterasiTravel] = idWisata2) and (paket[iterasiTravel] = paket1) then
+            hargaPerOrang := hargaTujuan2Paket1
+          else if (idTujuan[iterasiTravel] = idWisata2) and (paket[iterasiTravel] = paket2) then
+            hargaPerOrang := hargaTujuan2Paket2
+          else if (idTujuan[iterasiTravel] = idWisata3) and (paket[iterasiTravel] = paket1) then
+            hargaPerOrang := hargaTujuan3Paket1
+          else if (idTujuan[iterasiTravel] = idWisata3) and (paket[iterasiTravel] = paket2) then
+            hargaPerOrang := hargaTujuan3Paket2
+          else if (idTujuan[iterasiTravel] = idWisata4) and (paket[iterasiTravel] = paket1) then
+            hargaPerOrang := hargaTujuan4Paket1
+          else if (idTujuan[iterasiTravel] = idWisata4) and (paket[iterasiTravel] = paket2) then
+            hargaPerOrang := hargaTujuan4Paket2
+          else if (idTujuan[iterasiTravel] = idWisata5) and (paket[iterasiTravel] = paket1) then
+            hargaPerOrang := hargaTujuan5Paket1
+          else if (idTujuan[iterasiTravel] = idWisata5) and (paket[iterasiTravel] = paket2) then
+            hargaPerOrang := hargaTujuan5Paket2;
+            
+          gotoxy(26, 14); write(hargaPerOrang);
+
+        { selesai menentukan harga paket per orang }
+        gotoxy(22, 15); readln(jumlahPeserta[iterasiTravel]);
       { selesai input form }
 
       { mulai konfirmasi }
