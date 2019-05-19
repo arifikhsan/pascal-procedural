@@ -5,7 +5,8 @@ var i, j: integer;
     namaPenyewa, alamatPenyewa, jaminanPenyewa, idKaryawan, namaKaryawan, nopolMobil: array[1..50] of string;
     jenisMobil: array[1..50] of string;
     lamaSewa: array[1..50] of integer;
-    sewaPerHari, sewaPerMinggu: array[1..50] of longint;
+    lamaSewaPerMinggu: array[1..50] of real;
+    sewaPerHari, sewaPerMinggu, totalSewaPerHari, totalSewaPerMinggu: array[1..50] of longint;
 
     idKaryawan1, idKaryawan2, idKaryawan3: string;
     namaKaryawan1, namaKaryawan2, namaKaryawan3: string;
@@ -79,12 +80,16 @@ begin
     gotoxy(1, 12); write('Detil Mobil');
     gotoxy(1, 13); write('Nopol mobil      : ');
     gotoxy(1, 14); write('Jenis mobil      : ');
-    gotoxy(1, 15); write('Lama sewa        : ... Hari');
-    gotoxy(3, 16); write('Minggu       : ');
-    gotoxy(3, 17); write('Hari         : ');
+    
+    gotoxy(40, 13); write('Biaya sewa/Hari      : Rp. ');
+    gotoxy(40, 14); write('Biaya sewa/Minggu    : Rp. ');
+
+    gotoxy(1, 15); write('Lama sewa        :     Hari');
+    gotoxy(3, 16); write('Minggu      : Rp. ');
+    gotoxy(3, 17); write('Hari        : Rp. ');
     gotoxy(1, 18); write('Detail Bayar');
-    gotoxy(1, 19); write('Sewa selama ... minggu    : Rp. ');
-    gotoxy(1, 20); write('Sewa selama ... hari      : Rp. ');
+    gotoxy(1, 19); write('Sewa selama     minggu    : Rp. ');
+    gotoxy(1, 20); write('Sewa selama     hari      : Rp. ');
     gotoxy(1, 21); write('Total bayar               : Rp. ');
     gotoxy(1, 22); write('Fee Donatelo (20%)        : Rp. ');
     gotoxy(1, 23); write('---------------------------------------------------');
@@ -185,7 +190,32 @@ begin
             end;
         end;
       { selesai nomor polisi }
+
+      { mulai menampilkan mobil sewaan }
+        gotoxy(20, 14); write(jenisMobil[i]);
+        gotoxy(67, 13); write(sewaPerHari[i]);
+        gotoxy(67, 14); write(sewaPerMinggu[i]);
+      { selesai menampilkan mobil sewaan }
       
+      gotoxy(20, 15); readln(lamaSewa[i]);
+
+      { mulai menghitung lama sewa }
+        if (lamaSewa[i] > 7) then
+          begin
+            totalSewaPerMinggu[i] := lamaSewa[i] * sewaPerMinggu[i];
+            gotoxy(20, 16); write(totalSewaPerMinggu[i])
+          end;
+        totalSewaPerHari[i] := lamaSewa[i] * sewaPerHari[i];
+        gotoxy(20, 17); write(totalSewaPerHari[i]);
+      { selesai menghitung lama sewa }
+
+      lamaSewaPerMinggu[i] := lamaSewa[i] / 7;
+
+      gotoxy(12, 19); write(lamaSewaPerMinggu[i]:2:1);
+      gotoxy(12, 20); write(lamaSewa[i]);
+
+      {gotoxy(32, 19); write()}
+
       gotoxy(1, 24); write('Apakah ada penyewa lagi? [y/t]: ');
       gotoxy(34, 24); readln(ulangPenyewa);
       { jika ada lagi }
