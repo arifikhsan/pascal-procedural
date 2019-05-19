@@ -34,8 +34,8 @@ begin
     gotoxy(1, 3); write('Telp. 0813 3332 9901');
                         {1}                {20}                {40}                {60}
     gotoxy(1, 4); write('----------------------------------------------------');
-    gotoxy(1, 5); write('No Registrasi Transaksi: '); {auto inc}
-    gotoxy(1, 6); write('Id Karyawan            : '); {auto muncul nama}
+    gotoxy(1, 5); write('No Registrasi Transaksi : '); {auto inc}
+    gotoxy(1, 6); write('Id Karyawan             : '); {auto muncul nama}
     gotoxy(1, 7); write('----------------------------------------------------');
     gotoxy(1, 8); write('Data Transaksi Sewa Mobil');
     gotoxy(1, 9); write('Nama Penyewa     : ');
@@ -55,12 +55,12 @@ begin
     gotoxy(1, 23); write('---------------------------------------------------');
 
     { mulai proses }
-      gotoxy(26, 5); write(i);
+      gotoxy(27, 5); write(i);
 
       { mulai menentukan nama karyawan }
         while ulangKaryawan <> 't' do
         begin
-          gotoxy(26, 6); readln(idKaryawan[i]);
+          gotoxy(27, 6); readln(idKaryawan[i]);
           if (idKaryawan[i] = idKaryawan1) then
             begin
               namaKaryawan[i] := namaKaryawan1;
@@ -81,7 +81,7 @@ begin
               gotoxy(1, 24); write('Nama karyawan kurang tepat. ulangi? [y/t]: ');
               readln(ulangKaryawan);
             end;
-          gotoxy(31, 6); write(namaKaryawan[i]);
+          gotoxy(32, 6); write(namaKaryawan[i]);
         end;
       { selesai menentukan nama karyawan }
       gotoxy(20, 9); readln(namaPenyewa[i]);
@@ -99,11 +99,12 @@ begin
   gotoxy(1, 2); write('Jl. Legi-legian No. 201, Denpasar - Bali');
   gotoxy(1, 3); write('Telp. 0813 3332 9901');
                       {1}                {20}                {40}                {60}
-  gotoxy(1, 4); write('----------------------------------------------------');
-  gotoxy(1, 5); write('No');
-  gotoxy(1, 6); write('Id ');
-  gotoxy(1, 7); write('----------------------------------------------------');
-  gotoxy(1, 9); write('----------------------------------------------------');
+  gotoxy(1, 4); write('------------------------------------------------------------');
+  gotoxy(1, 5); write('No | Nama     | Nopol  |  Jenis  |   Lama Sewa     |  Biaya ');
+  gotoxy(1, 6); write('   | Penyewa  | Mobil  |  Mobil  | Minggu  |  Hari |        ');
+  gotoxy(1, 7); write('------------------------------------------------------------');
+
+  gotoxy(1, 9); write('------------------------------------------------------------');
   readln;
 
 end.
