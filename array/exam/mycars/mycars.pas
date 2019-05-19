@@ -38,20 +38,20 @@ begin
     gotoxy(1, 6); write('Id Karyawan            : '); {auto muncul nama}
     gotoxy(1, 7); write('----------------------------------------------------');
     gotoxy(1, 8); write('Data Transaksi Sewa Mobil');
-    gotoxy(1, 9); write('Nama Penyewa: ');
-    gotoxy(1, 10); write('Alamat Penyewa: ');
-    gotoxy(1, 11); write('Jaminan Penyewa: ');
+    gotoxy(1, 9); write('Nama Penyewa     : ');
+    gotoxy(1, 10); write('Alamat Penyewa   : ');
+    gotoxy(1, 11); write('Jaminan Penyewa  : ');
     gotoxy(1, 12); write('Detil Mobil');
-    gotoxy(1, 13); write('Nopol mobil: ');
-    gotoxy(1, 14); write('Jenis mobil: ');
-    gotoxy(1, 15); write('Lama sewa: ... Hari');
-    gotoxy(3, 16); write('Minggu: ');
-    gotoxy(3, 17); write('Hari: ');
+    gotoxy(1, 13); write('Nopol mobil      : ');
+    gotoxy(1, 14); write('Jenis mobil      : ');
+    gotoxy(1, 15); write('Lama sewa        : ... Hari');
+    gotoxy(3, 16); write('Minggu       : ');
+    gotoxy(3, 17); write('Hari         : ');
     gotoxy(1, 18); write('Detail Bayar');
-    gotoxy(1, 19); write('Sewa selama ... minggu: Rp. ');
-    gotoxy(1, 20); write('Sewa selama ... hari: Rp. ');
-    gotoxy(1, 21); write('Total bayar: Rp. ');
-    gotoxy(1, 22); write('Fee Donatelo (20%): Rp. ');
+    gotoxy(1, 19); write('Sewa selama ... minggu    : Rp. ');
+    gotoxy(1, 20); write('Sewa selama ... hari      : Rp. ');
+    gotoxy(1, 21); write('Total bayar               : Rp. ');
+    gotoxy(1, 22); write('Fee Donatelo (20%)        : Rp. ');
     gotoxy(1, 23); write('---------------------------------------------------');
 
     { mulai proses }
@@ -64,26 +64,27 @@ begin
           if (idKaryawan[i] = idKaryawan1) then
             begin
               namaKaryawan[i] := namaKaryawan1;
-              ulangKaryawan := ''
+              ulangKaryawan := 't'
             end
           else if (idKaryawan[i] = idKaryawan2) then
             begin
               namaKaryawan[i] := namaKaryawan2;
-              ulangKaryawan := ''
+              ulangKaryawan := 't'
             end
           else if (idKaryawan[i] = idKaryawan3) then
             begin
               namaKaryawan[i] := namaKaryawan3;
-              ulangKaryawan := ''
+              ulangKaryawan := 't'
             end
           else 
             begin
               gotoxy(1, 24); write('Nama karyawan kurang tepat. ulangi? [y/t]: ');
               readln(ulangKaryawan);
             end;
-          
+          gotoxy(31, 6); write(namaKaryawan[i]);
         end;
       { selesai menentukan nama karyawan }
+      gotoxy(20, 9); readln(namaPenyewa[i]);
       gotoxy(1, 24); write('Apakah ada penyewa lagi? [y/t]: ');
       gotoxy(34, 24); readln(ulangPenyewa);
       { jika ada lagi }
