@@ -8,6 +8,11 @@ var i, j: integer;
     idKaryawan1, idKaryawan2, idKaryawan3: string;
     namaKaryawan1, namaKaryawan2, namaKaryawan3: string;
 
+    nopol1, nopol2, nopol3, nopol4, nopol5, nopol6: string;
+    jenisMobil1, jenisMobil2, jenisMobil3, jenisMobil4, jenisMobil5, jenisMobil6: string;
+    sewaPerHari1, sewaPerHari2, sewaPerHari3, sewaPerHari4, sewaPerHari5, sewaPerHari6: longint;  
+    sewaPerMinggu1, sewaPerMinggu2, sewaPerMinggu3, sewaPerMinggu4, sewaPerMinggu5, sewaPerMinggu6: longint;  
+
 begin
   ulangPenyewa := '';
   i := 0;
@@ -20,6 +25,34 @@ begin
   namaKaryawan1 := 'Andrea';
   namaKaryawan2 := 'Sarah';
   namaKaryawan3 := 'Deasy';
+
+  nopol1 := 'AA1234YB';
+  nopol2 := 'AA2167KE';
+  nopol3 := 'AA9567KB';
+  nopol4 := 'AA8888IL';
+  nopol5 := 'AA8154QQ';
+  nopol6 := 'AA9876UB';
+
+  jenisMobil1 := 'Daihatsu Terios';
+  jenisMobil2 := 'Toyota Rush';
+  jenisMobil3 := 'Inova Reborn';
+  jenisMobil4 := 'Honda HRV';
+  jenisMobil5 := 'Honda Jazz';
+  jenisMobil6 := 'Toyota Avanza';
+
+  sewaPerHari1 := 300000;
+  sewaPerHari2 := 400000;
+  sewaPerHari3 := 700000;
+  sewaPerHari4 := 600000;
+  sewaPerHari5 := 300000;
+  sewaPerHari6 := 300000;
+
+  sewaPerMinggu1 := 1800000;
+  sewaPerMinggu2 := 2400000;
+  sewaPerMinggu3 := 4200000;
+  sewaPerMinggu4 := 3600000;
+  sewaPerMinggu5 := 1800000;
+  sewaPerMinggu6 := 1800000;
 
   while ulangPenyewa <> 't' do
   begin
