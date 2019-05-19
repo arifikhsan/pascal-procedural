@@ -2,8 +2,10 @@ uses crt;
 
 var i, j: integer;
     ulangPenyewa, ulangNopol, ulangKaryawan: string;
-    namaPenyewa, alamatPenyewa, jaminanPenyewa, idKaryawan, namaKaryawan: array[1..50] of string;
+    namaPenyewa, alamatPenyewa, jaminanPenyewa, idKaryawan, namaKaryawan, nopolMobil: array[1..50] of string;
+    jenisMobil: array[1..50] of string;
     lamaSewa: array[1..50] of integer;
+    sewaPerHari, sewaPerMinggu: array[1..50] of longint;
 
     idKaryawan1, idKaryawan2, idKaryawan3: string;
     namaKaryawan1, namaKaryawan2, namaKaryawan3: string;
@@ -113,11 +115,77 @@ begin
             begin
               gotoxy(1, 24); write('Nama karyawan kurang tepat. ulangi? [y/t]: ');
               readln(ulangKaryawan);
+              { jika mengulang }
+                gotoxy(1, 24); write('                                               ');
+                gotoxy(27, 6); write('       ');
+              { jika mengulang }
             end;
           gotoxy(32, 6); write(namaKaryawan[i]);
         end;
       { selesai menentukan nama karyawan }
+
       gotoxy(20, 9); readln(namaPenyewa[i]);
+      gotoxy(20, 10); readln(alamatPenyewa[i]);
+      gotoxy(20, 11); readln(jaminanPenyewa[i]);
+
+      { mulai nomor polisi }
+        while ulangNopol <> 't' do
+        begin
+          gotoxy(20, 13); readln(nopolMobil[i]);
+          if (nopolMobil[i] = nopol1) then
+            begin
+              jenisMobil[i] := jenisMobil1;
+              sewaPerHari[i] := sewaPerHari1;
+              sewaPerMinggu[i] := sewaPerMinggu1;
+              ulangNopol := 't'
+            end
+          else if (nopolMobil[i] = nopol2) then
+            begin
+              jenisMobil[i] := jenisMobil2;
+              sewaPerHari[i] := sewaPerHari2;
+              sewaPerMinggu[i] := sewaPerMinggu2;
+              ulangNopol := 't'
+            end
+          else if (nopolMobil[i] = nopol3) then
+            begin
+              jenisMobil[i] := jenisMobil3;
+              sewaPerHari[i] := sewaPerHari3;
+              sewaPerMinggu[i] := sewaPerMinggu3;
+              ulangNopol := 't'
+            end
+          else if (nopolMobil[i] = nopol4) then
+            begin
+              jenisMobil[i] := jenisMobil4;
+              sewaPerHari[i] := sewaPerHari4;
+              sewaPerMinggu[i] := sewaPerMinggu4;
+              ulangNopol := 't'
+            end
+          else if (nopolMobil[i] = nopol5) then
+            begin
+              jenisMobil[i] := jenisMobil5;
+              sewaPerHari[i] := sewaPerHari5;
+              sewaPerMinggu[i] := sewaPerMinggu5;
+              ulangNopol := 't'
+            end
+          else if (nopolMobil[i] = nopol6) then
+            begin
+              jenisMobil[i] := jenisMobil6;
+              sewaPerHari[i] := sewaPerHari6;
+              sewaPerMinggu[i] := sewaPerMinggu6;
+              ulangNopol := 't'
+            end
+          else
+            begin
+              gotoxy(1, 24); write('Nomor polisi kurang tepat. ulangi? [y/t]: ');
+              readln(ulangNopol);
+              { jika mengulang }
+                gotoxy(1, 24); write('                                               ');
+                gotoxy(20, 13); write('       ');
+              { jika mengulang }
+            end;
+        end;
+      { selesai nomor polisi }
+      
       gotoxy(1, 24); write('Apakah ada penyewa lagi? [y/t]: ');
       gotoxy(34, 24); readln(ulangPenyewa);
       { jika ada lagi }
