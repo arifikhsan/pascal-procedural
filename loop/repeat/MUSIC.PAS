@@ -6,12 +6,13 @@ Begin
 
     repeat
           begin
-                Clrscr;
+                clrscr;
                 Write('nama alat musik: ');
                 Readln(nama);
                 Write('ada nama alat musik lagi? [y/t]: ');
                 Readln(jawab);
           end;
-    until (jawab = 't') or (jawab = 'T');
+    until (jawab = 't');
+    readln;
 
 End.
